@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="./index.css">
+  <title>Subscription Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+ <section class="main-container">
+    <div class="subscription-page-view">
+      <!-- -----------------navbar-------------- -->
+        <div class="subscription-page-navbar"> 
+          <div class="subscription-page-step-cotainer">
+            <p class="subscription-page-navbar-highlted-number">1</p>
+            <ul class="subscription-page-navbar-name-container">
+              <li class="subscription-page-navbar-step">STEP1</li>
+              <li class="subscription-page-navbar-name">YOUR INFO</li>
+            </ul>
+          </div>
+          <div class="subscription-page-step-cotainer">
+            <p class="subscription-page-navbar-number">2</p>
+            <ul class="subscription-page-navbar-name-container">
+              <li class="subscription-page-navbar-step">STEP2</li>
+              <li class="subscription-page-navbar-name">SELECT PLAN</li>
+            </ul>
+          </div>    
+          <div class="subscription-page-step-cotainer">
+            <p class="subscription-page-navbar-number">3</p>
+            <ul class="subscription-page-navbar-name-container">
+              <li class="subscription-page-navbar-step">STEP3</li>
+              <li class="subscription-page-navbar-name">ADD-ONS</li>
+            </ul>
+          </div>    
+          <div class="subscription-page-step-cotainer">
+            <p class="subscription-page-navbar-number">4</p>
+            <ul class="subscription-page-navbar-name-container">
+              <li class="subscription-page-navbar-step">STEP4</li>
+              <li class="subscription-page-navbar-name">SUMMARY</li>
+            </ul>
+          </div>          
+        </div>
+        
+        <!-- ------------personalInfo--------------------- -->
+        
+         <div class="subscription-page-personalinfo"> 
+          <h1 class="subscription-page-personalinfo-heading" id="personal-heading">Personal info</h1>
+          <p class="subscription-page-personalinfo-para" id="personal-para">Please provide your name,email address, and phone number.</p> 
+
+         <!-- -----------personalinfo-form-------------- --> 
+
+          <form id="form" class="subscription-page-personalinfo-form" name="submit-to-google-sheet">
+          <div class="subscription-page-personalinfo-input-container">
+            <label for="name">Name</label>
+            <div class="subscription-page-personalinfo-input-check">
+              <input class='subscription-page-personalinfo-input' id="name"  name="name" type="text" placeholder="e.g. Stephen King">
+              <div class="input-check" id="name-check">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </div>              
+            </div>
+            <span class="error-msg" id="name_err"></span>
+          </div>
+    
+          <div class="subscription-page-personalinfo-input-container">
+            <label for="email">Email Address</label>
+            <div class="subscription-page-personalinfo-input-check">
+              <input class='subscription-page-personalinfo-input' id="email" name="email" type="email" placeholder="e.g. stephenking@lorem.com">
+              <div class="input-check" id="email-check">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </div>            
+             </div>
+            <span class="error-msg" id="email_err"></span>
+          </div>
+    
+          <div class="subscription-page-personalinfo-input-container">
+            <label for="phone_no">Phone Number</label>
+            <div class="subscription-page-personalinfo-input-check">
+              <input class='subscription-page-personalinfo-input' id="phone_no" name="phone" type="number" placeholder="e.g.+1 234 567 890">
+              <div class="input-check" id="phone-check">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+              </div>             
+            </div>
+            <span class="error-msg" id="phone_no_err"></span>
+          </div>
+          
+          <div class="button-container">
+            <button type="submit" id="nextstepbutton" class="next-step-button" >Next Step</button>
+          </div>
+        </form>          
+        </div>
+      </div>        
+    </section>    
+    <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/060c595db5.js" crossorigin="anonymous"></script>
+</body>
+</html> 
+
+
+ 

@@ -1,0 +1,162 @@
+const personal_form=document.getElementById('form');
+const name=document.getElementById('name');
+const email=document.getElementById('email');
+const phone_no=document.getElementById("phone_no");
+const name_err=document.getElementById('name_err');
+const email_err=document.getElementById('email_err'); 
+const phone_no_err=document.getElementById('phone_no_err');
+const personal_heading=document.getElementById('personal-heading');
+const personal_para=document.getElementById('personal-para');
+
+let name_er;
+let email_er;
+let phone_no_er;
+const letters=/^[A-Za-z]+$/;
+const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  
+  if(name.value===""){                                  //name error validation
+    name_err.textContent='*Please fill the Name field'; //adding error msg to name field
+    name_err.classList.add("error-msg"); 
+    document.getElementById('name-check').classList.remove('check-success'); 
+    name.classList.add("subscription-page-personalinfo-input-err-box");    
+    name.classList.remove("subscription-page-personalinfo-input-success-box"); 
+    name_er=false;
+  }else if(!name.value.match(letters)){
+    name_err.textContent='*Name field must contains only alphabets'; //adding error msg to name field do not contains alphabets 
+    name_err.classList.add("error-msg"); 
+    document.getElementById('name-check').classList.remove('check-success'); 
+    name.classList.add("subscription-page-personalinfo-input-err-box");
+    name.classList.remove("subscription-page-personalinfo-input-success-box"); 
+    name_er=false;
+  }else{  
+    document.getElementById('name-check').classList.add('check-success'); 
+    name_err.textContent='';                           //removing error msg to name field
+    name_err.classList.remove("error-msg");
+    name.classList.remove("subscription-page-personalinfo-input-err-box");
+    name.classList.add("subscription-page-personalinfo-input-success-box"); 
+    name_er=true;
+    }
+
+  if(email.value===''){                                 //email error validation
+    email_err.textContent='*Please fill the email field';//adding error msg to email field
+    email_err.classList.add("error-msg");
+    document.getElementById('email-check').classList.remove('check-success'); 
+    email.classList.add("subscription-page-personalinfo-input-err-box");
+    email.classList.remove("subscription-page-personalinfo-input-success-box");
+    email_er=false;
+
+  }else if(!(email.value.match(email_valid))){
+    email_err.textContent='*Enter valid email Id';//adding valid email error msg to email field
+    email_err.classList.add("error-msg");
+    document.getElementById('email-check').classList.remove('check-success'); 
+    email.classList.add("subscription-page-personalinfo-input-err-box");
+    email.classList.remove("subscription-page-personalinfo-input-success-box");
+    email_er=false;
+  }
+  else{
+    document.getElementById('email-check').classList.add('check-success'); 
+    email_err.textContent='';                             //removing error msg to email field
+    email_err.classList.remove("error-msg");
+    email.classList.remove("subscription-page-personalinfo-input-err-box");
+    email.classList.add("subscription-page-personalinfo-input-success-box"); 
+    email_er=true;
+  }
+
+  if (phone_no.value===''){                                         //phone number error validation
+    document.getElementById('phone-check').classList.remove('check-success'); 
+    phone_no_err.textContent='*Please fill the phone number field'; //adding error msg to phone number field
+    phone_no_err.classList.add("error-msg");
+    phone_no.classList.add("subscription-page-personalinfo-input-err-box");
+    phone_no.classList.remove("subscription-page-personalinfo-input-success-box"); 
+    phone_no_er=false;
+  }else if(phone_no.value.length!==10){
+    document.getElementById('phone-check').classList.remove('check-success'); 
+    phone_no_err.textContent='*Phone Number should be 10 digits'; //adding error msg to phone number field
+    phone_no_err.classList.add("error-msg");
+    phone_no.classList.add("subscription-page-personalinfo-input-err-box");
+    phone_no.classList.remove("subscription-page-personalinfo-input-success-box"); 
+    phone_no_er=false;
+  }
+  else{
+    document.getElementById('phone-check').classList.add('check-success'); 
+    phone_no_err.textContent='';                                     //adding error msg to phone number field
+    phone_no_err.classList.remove("error-msg");
+    phone_no.classList.remove("subscription-page-personalinfo-input-err-box");
+    phone_no.classList.add("subscription-page-personalinfo-input-success-box"); 
+    phone_no_er=true;
+  }
+  
+  if(name_er&&email_er&&phone_no_er){
+    
+    let form=document.querySelector('form');
+      form.addEventListener('submit',(e)=>{
+          e.preventDefault();
+          let data=new FormData(form);
+          fetch('https://script.google.com/macros/s/AKfycbzP1QN4HF3nibhjKcJYeRobXgeO_WGnFfbGvYJv2tKy0fOcCupl1wCcsAG6ERcCbQWZ/exec',{
+              method:"POST",
+              body:data
+          })
+          .then(res=>res.text())
+          .then(data=> console.log(data));
+          alert("Your Data Saved Successfully");          
+      })
+
+    document.getElementById('name-check').classList.remove('check-success'); 
+    document.getElementById('email-check').classList.remove('check-success'); 
+    document.getElementById('phone-check').classList.remove('check-success'); 
+    personal_heading.textContent='Thank you!!!';
+    personal_heading.style.textAlign='center';
+    personal_para.textContent="We are reviewing your request and we'll get in touch as soon as possible.";
+    personal_para.style.textAlign='center';
+    name.classList.add("subscription-page-personalinfo-input-border");
+    name.classList.remove("subscription-page-personalinfo-input-success-box"); 
+    email.classList.add("subscription-page-personalinfo-input-border");
+    email.classList.remove("subscription-page-personalinfo-input-success-box");
+    phone_no.classList.add("subscription-page-personalinfo-input-border");
+    phone_no.classList.remove("subscription-page-personalinfo-input-success-box");
+    const btn=document.getElementById('nextstepbutton');
+    btn.textContent='Confirm';
+    btn.style.backgroundColor='green';
+  }  
+})
+
+
+name.addEventListener("keydown",nameErr);
+function nameErr(e){
+  if(!(e.key.match(letters))){
+    name_err.textContent='*Name field must contains only alphabets'; //adding error msg to name field do not contains alphabets 
+    name_err.classList.add("error-msg"); 
+    name.classList.add("subscription-page-personalinfo-input-err-box");
+    name.classList.remove("subscription-page-personalinfo-input-success-box"); 
+    document.getElementById('name-check').classList.remove('check-success'); 
+  }else{
+    document.getElementById('name-check').classList.add('check-success'); 
+    name_err.textContent='';                           //removing error msg to name field
+    name_err.classList.remove("error-msg");
+    name.classList.remove("subscription-page-personalinfo-input-err-box");
+    name.classList.add("subscription-page-personalinfo-input-success-box"); 
+  }
+}
+
+email.addEventListener("keydown",emailErr);
+function emailErr(e){
+  if (e.key==='.com'){
+    if(!(email.value.match(email_valid))){
+      email_err.textContent='*Enter valid email Id';//adding valid email error msg to email field
+      email_err.classList.add("error-msg");
+      email.classList.add("subscription-page-personalinfo-input-err-box");
+      email.classList.remove("subscription-page-personalinfo-input-success-box");
+    }else{
+      email_err.textContent='';                             //removing error msg to email field
+      email_err.classList.remove("error-msg");
+      email.classList.remove("subscription-page-personalinfo-input-err-box");
+      email.classList.add("subscription-page-personalinfo-input-success-box"); 
+    }
+  }  
+}
+
+
+
