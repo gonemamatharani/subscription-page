@@ -81,6 +81,7 @@
   height: 80%;
   margin-left: 20px;
 }
+
 .subscription-page-personalinfo-para{
   color: hsl(231, 11%, 63%);
 }
@@ -153,7 +154,7 @@
   margin-top: 40px;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap:20px;
+  grid-gap:10px;
 }
 .subscription-plan{
   border: 1px solid  hsl(229, 24%, 87%);
@@ -167,15 +168,16 @@
  }
 .subscription-plan-img{
   padding-bottom: 25px;
+  height: 62px;
 }
 .subscription-plan-details{
   list-style: none;
   padding-left: 0;
 }
 .subscription-plan-heading{
-  color:  hsl(213, 96%, 18%);
-  font-size: 20px;
-  font-weight: 500;
+  color:  hsl(214, 66%, 30%);
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 3px;
 }
 .subscription-plan-price{
@@ -221,7 +223,7 @@ transform: translateX(20px);
 .subscription-plan-button-container{
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 .goback-btn{
   border: none;
@@ -277,7 +279,36 @@ transform: translateX(20px);
 .subscription-page-personalinfo-input-container{
   margin-bottom: 8px;
 }
-}
 .next-step-button{
   margin-top:20px;
+}
+
+.subscription-plan-main-container{
+  margin-top: 100px;
+  margin-left: 30px;
+  width: 340px;
+  border-radius: 16px;
+  position: absolute;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px rgb(253, 253, 253);
+  height: 34rem;
+  padding: 20px 25px;
+  }
+  
+.subscription-plan-container{
+  display: flex;
+  flex-direction: column;
+}
+.subscription-plan{
+display: flex;
+width: 300px;
+height: 80px;
+margin-bottom: 5px;
+}
+.subscription-plan-details{
+  margin: 0 16px;
+}
+.subscription-plan-button-container{
+  background-color: #fff;
+}
 }
