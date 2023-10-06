@@ -14,6 +14,19 @@ let phone_no_er;
 const letters=/^[A-Za-z]+$/;
 const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
+function second_step(){
+  const second_step=document.getElementById('second_step');
+  const first_step=document.getElementById('first_step');
+  first_step.classList.add('subscription-page-personalinfo-display');
+  second_step.classList.remove('subscription-plan-main-container-display');
+  const step1_num=document.getElementById("step1");
+  step1_num.classList.add('subscription-page-navbar-number');
+  step1_num.classList.remove('subscription-page-navbar-highlted-number');
+  const step2_num=document.getElementById("step2");
+  step2_num.classList.remove('subscription-page-navbar-number');
+  step2_num.classList.add('subscription-page-navbar-highlted-number');
+}
+
 form.addEventListener('submit',function(e){
   e.preventDefault();
   
@@ -95,13 +108,14 @@ form.addEventListener('submit',function(e){
       form.addEventListener('submit',(e)=>{
           e.preventDefault();
           let data=new FormData(form);
-          fetch('https://script.google.com/macros/s/AKfycbzP1QN4HF3nibhjKcJYeRobXgeO_WGnFfbGvYJv2tKy0fOcCupl1wCcsAG6ERcCbQWZ/exec',{
+          fetch('https://script.google.com/macros/s/AKfycby2zApkw4pVKDZ884OvUl8sIxSEYBmWQbmxfvl-hjxQVh8edWRHrSdTVvOA7XPd0WZb/exec',{
               method:"POST",
               body:data
           })
           .then(res=>res.text())
           .then(data=> console.log(data));
-          alert("Your Data Saved Successfully");          
+          alert("Your Data Saved Successfully"); 
+          second_step();       
       })
 
     document.getElementById('name-check').classList.remove('check-success'); 

@@ -15,28 +15,28 @@
       <!-- -----------------navbar-------------- -->
         <div class="subscription-page-navbar"> 
           <div class="subscription-page-step-cotainer">
-            <p class="subscription-page-navbar-highlted-number">1</p>
+            <p id="step1" class="subscription-page-navbar-highlted-number">1</p>
             <ul class="subscription-page-navbar-name-container">
               <li class="subscription-page-navbar-step">STEP1</li>
               <li class="subscription-page-navbar-name">YOUR INFO</li>
             </ul>
           </div>
           <div class="subscription-page-step-cotainer">
-            <p class="subscription-page-navbar-number">2</p>
+            <p id="step2" class="subscription-page-navbar-number">2</p>
             <ul class="subscription-page-navbar-name-container">
               <li class="subscription-page-navbar-step">STEP2</li>
               <li class="subscription-page-navbar-name">SELECT PLAN</li>
             </ul>
           </div>    
           <div class="subscription-page-step-cotainer">
-            <p class="subscription-page-navbar-number">3</p>
+            <p id="step3" class="subscription-page-navbar-number">3</p>
             <ul class="subscription-page-navbar-name-container">
               <li class="subscription-page-navbar-step">STEP3</li>
               <li class="subscription-page-navbar-name">ADD-ONS</li>
             </ul>
           </div>    
           <div class="subscription-page-step-cotainer">
-            <p class="subscription-page-navbar-number">4</p>
+            <p id="step4" class="subscription-page-navbar-number">4</p>
             <ul class="subscription-page-navbar-name-container">
               <li class="subscription-page-navbar-step">STEP4</li>
               <li class="subscription-page-navbar-name">SUMMARY</li>
@@ -44,15 +44,15 @@
           </div>          
         </div>
         
-        <!-- ------------personalInfo--------------------- -->
+        <!-- ------------personalInfo---------first step------------ -->
         
-         <div class="subscription-page-personalinfo"> 
+         <div  id='first_step' class="subscription-page-personalinfo"> 
           <h1 class="subscription-page-personalinfo-heading" id="personal-heading">Personal info</h1>
           <p class="subscription-page-personalinfo-para" id="personal-para">Please provide your name,email address, and phone number.</p> 
 
          <!-- -----------personalinfo-form-------------- --> 
 
-          <form id="form" class="subscription-page-personalinfo-form" name="submit-to-google-sheet">
+          <form id="form" class="subscription-page-personalinfo-form">
           <div class="subscription-page-personalinfo-input-container">
             <label for="name">Name</label>
             <div class="subscription-page-personalinfo-input-check">
@@ -86,11 +86,49 @@
             <span class="error-msg" id="phone_no_err"></span>
           </div>
           
-          <div class="button-container">
+          <div class="personalInfo-button-container">
             <button type="submit" id="nextstepbutton" class="next-step-button" >Next Step</button>
           </div>
         </form>          
         </div>
+        <!-- ----------------------second step------------------------------- -->
+        <div id="second_step" class="subscription-plan-main-container subscription-plan-main-container-display">
+          <h1 class="subscription-page-personalinfo-heading" id="personal-heading">Select your plan</h1>
+            <p class="subscription-page-personalinfo-para" id="personal-para">You have the pption of monthly or yearly billing</p> 
+            <div class="subscription-plan-container">
+              <div class="subscription-plan">
+                <img class="subscription-plan-img" src="./assets/images/icon-arcade.svg" alt="">
+                <ul class="subscription-plan-details">
+                  <li class="subscription-plan-heading">Arcade</li>
+                  <li class="subscription-plan-price">$9/mo</li>
+                </ul>
+              </div>
+              <div class="subscription-plan">
+                <img class="subscription-plan-img" src="./assets/images/icon-advanced.svg" alt="">
+                <ul class="subscription-plan-details">
+                  <li class="subscription-plan-heading">Advanced</li>
+                  <li class="subscription-plan-price">$12/mo</li>
+                </ul>
+              </div>
+              <div class="subscription-plan">
+                <img class="subscription-plan-img" src="./assets/images/icon-pro.svg" alt="">
+                <ul class="subscription-plan-details">
+                  <li class="subscription-plan-heading">Pro</li>
+                  <li class="subscription-plan-price">$15/mo</li>
+                </ul>
+              </div>
+            </div>
+            <div class="toggle-container">
+              <p>Monthly</p>
+              <input type="checkbox" id="check_box"> 
+              <label for="check_box" class="toggle"></label>
+              <p>Yearly</p>
+            </div>
+            <div class="subscription-plan-button-container">
+              <button class="goback-btn">Go Back</button>
+              <button class="next-step-button">Next Step</button>
+            </div>
+          </div>
       </div>        
     </section>    
     <script src="./index.js"></script>

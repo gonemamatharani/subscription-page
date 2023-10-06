@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:rgb(237, 244, 247);
+  /* background-color:rgb(237, 244, 247); */
 }
 .subscription-page-view{
   width:70vw;
@@ -70,8 +70,10 @@
   color:hsl(206, 82%, 78%);
 }
 
-/* ------------------profile info--------------- */
-
+/* ------------------profile info------- first-step-------- */
+.subscription-page-personalinfo-display{
+  display: none;
+}
 .subscription-page-personalinfo{
   flex-basis: 20%;
   padding: 30px;
@@ -124,7 +126,7 @@
 .subscription-page-personalinfo-input-success-box{
   border:2px solid rgb(39, 197, 39);
 }
-.button-container{
+.personalInfo-button-container{
   display:flex;
   flex-direction: row;
   justify-content: end;
@@ -132,10 +134,102 @@
 .next-step-button{
   margin-top:50px;
   height:40px;
-  width:120px;
+  width:100px;
   border-radius: 8px;
   background-color: hsl(213, 96%, 18%);
   color:hsl(0, 0%, 100%) ;
+  border: none;
+}
+
+/* -------------second  step------------------ */
+.subscription-plan-main-container-display{
+ display: none;
+}
+.subscription-plan-main-container{
+  margin-top: 40px;
+  margin-left: 45px;
+}
+.subscription-plan-container{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap:20px;
+}
+.subscription-plan{
+  border: 1px solid  hsl(229, 24%, 87%);
+  padding:20px;
+  width: 150px;
+  border-radius: 8px;
+  padding-bottom: 10px;  
+}
+.subscription-plan:hover{
+ border: 1.5px solid hsl(213, 52%, 50%); 
+ }
+.subscription-plan-img{
+  padding-bottom: 25px;
+}
+.subscription-plan-details{
+  list-style: none;
+  padding-left: 0;
+}
+.subscription-plan-heading{
+  color:  hsl(213, 96%, 18%);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+.subscription-plan-price{
+  color: hsl(231, 7%, 81%);
+}
+.toggle-container{
+  display: flex;
+  justify-content: center;
+  background-color:rgb(248, 249, 250);
+  margin-top: 20px;
+  border-radius: 8px;  
+}
+.toggle{
+  background-color:#20096d;
+  width:40px;
+  height:20px;
+  border-radius: 40px;
+  margin: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+.toggle::before{
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  height:14px;
+  width:14px;
+  border-radius: 100%;
+  margin: 3px;
+  transition: 0.2s;
+}
+input:checked + .toggle{
+  background-color:#d2d2d2;
+
+}
+input:checked + .toggle::before{
+transform: translateX(20px);
+}
+#check_box{
+  display: none;
+}
+.subscription-plan-button-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+.goback-btn{
+  border: none;
+  background-color: transparent;
+  color:hsl(229, 49%, 36%);
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 20px;
 }
 /* ------------------mobile view--------------- */
 @media screen and (max-width:1000px){
