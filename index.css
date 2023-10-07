@@ -306,9 +306,9 @@ transform: translateX(20px);
 .subscription-plan{
 display: flex;
 width: 300px;
-height: 70px;
 margin-bottom: 5px;
-padding: 15px;
+padding-bottom: 10px;  
+
 }
 .subscription-plan-details{
   margin: 0 16px;
