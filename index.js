@@ -36,7 +36,7 @@ function subscription_plan_year_month(){
     pro_months_free.textContent='';
   }
 }
-// function second_step(){
+function second_step(){
   const second_step=document.getElementById('second_step');
   const first_step=document.getElementById('first_step');
   first_step.classList.add('subscription-page-personalinfo-display');
@@ -47,7 +47,7 @@ function subscription_plan_year_month(){
   const step2_num=document.getElementById("step2");
   step2_num.classList.remove('subscription-page-navbar-number');
   step2_num.classList.add('subscription-page-navbar-highlted-number');
-// }
+ }
 
 form.addEventListener('submit',function(e){
   e.preventDefault();
