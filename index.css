@@ -151,7 +151,7 @@
   margin-left: 45px;
 }
 .subscription-plan-container{
-  margin-top: 40px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap:10px;
@@ -183,6 +183,10 @@
 .subscription-plan-price{
   color: hsl(231, 7%, 81%);
 }
+.months_free{
+  color: #716791;
+  margin: 5px 0;
+}
 .toggle-container{
   display: flex;
   justify-content: center;
@@ -211,13 +215,13 @@
   transition: 0.2s;
 }
 input:checked + .toggle{
-  background-color:#d2d2d2;
+  background-color:#20096d;
 
 }
 input:checked + .toggle::before{
 transform: translateX(20px);
 }
-#check_box{
+#toggle_check{
   display: none;
 }
 .subscription-plan-button-container{
@@ -302,8 +306,9 @@ transform: translateX(20px);
 .subscription-plan{
 display: flex;
 width: 300px;
-height: 80px;
+height: 70px;
 margin-bottom: 5px;
+padding: 15px;
 }
 .subscription-plan-details{
   margin: 0 16px;

@@ -14,7 +14,29 @@ let phone_no_er;
 const letters=/^[A-Za-z]+$/;
 const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-function second_step(){
+function subscription_plan_year_month(){
+  const arcade_months_free=document.getElementById('arcade_months_free');
+  const advanced_months_free=document.getElementById('advanced_months_free');
+  const pro_months_free=document.getElementById('pro_months_free');
+  
+  const toggle_check=document.getElementById('toggle_check');
+  if(toggle_check.checked){
+    document.getElementById('arcade_plan_price').textContent='$90/yr';
+    arcade_months_free.textContent='2 months free';
+    document.getElementById('advanced_plan_price').textContent='$120/yr';
+    advanced_months_free.textContent='2 months free';
+    document.getElementById('pro_plan_price').textContent='$150/yr';
+    pro_months_free.textContent='2 months free';
+  }else{
+    document.getElementById('arcade_plan_price').textContent='$9/mo';
+    document.getElementById('advanced_plan_price').textContent='$12/yr';
+    document.getElementById('pro_plan_price').textContent='$15/yr';
+    arcade_months_free.textContent='';
+    advanced_months_free.textContent='';
+    pro_months_free.textContent='';
+  }
+}
+// function second_step(){
   const second_step=document.getElementById('second_step');
   const first_step=document.getElementById('first_step');
   first_step.classList.add('subscription-page-personalinfo-display');
@@ -25,7 +47,7 @@ function second_step(){
   const step2_num=document.getElementById("step2");
   step2_num.classList.remove('subscription-page-navbar-number');
   step2_num.classList.add('subscription-page-navbar-highlted-number');
-}
+// }
 
 form.addEventListener('submit',function(e){
   e.preventDefault();

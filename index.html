@@ -91,37 +91,42 @@
           </div>
         </form>          
         </div>
+
         <!-- ----------------------second step------------------------------- -->
+
         <div id="second_step" class="subscription-plan-main-container subscription-plan-main-container-display">
           <h1 class="subscription-page-personalinfo-heading" id="personal-heading">Select your plan</h1>
             <p class="subscription-page-personalinfo-para" id="personal-para">You have the pption of monthly or yearly billing</p> 
             <div class="subscription-plan-container">
-              <div class="subscription-plan">
+              <div  class="subscription-plan">
                 <img class="subscription-plan-img" src="./assets/images/icon-arcade.svg" alt="">
-                <ul class="subscription-plan-details">
+                <ul id="arcade" class="subscription-plan-details">
                   <li class="subscription-plan-heading">Arcade</li>
-                  <li class="subscription-plan-price">$9/mo</li>
+                  <li class="subscription-plan-price" id="arcade_plan_price">$9/mo</li>
+                  <li id="arcade_months_free" class="months_free"></li>
                 </ul>
               </div>
-              <div class="subscription-plan">
+              <div  class="subscription-plan">
                 <img class="subscription-plan-img" src="./assets/images/icon-advanced.svg" alt="">
-                <ul class="subscription-plan-details">
+                <ul id="Advanced" class="subscription-plan-details">
                   <li class="subscription-plan-heading">Advanced</li>
-                  <li class="subscription-plan-price">$12/mo</li>
+                  <li class="subscription-plan-price" id="advanced_plan_price">$12/mo</li>
+                  <li id="advanced_months_free" class="months_free"></li>
                 </ul>
               </div>
-              <div class="subscription-plan">
+              <div  class="subscription-plan">
                 <img class="subscription-plan-img" src="./assets/images/icon-pro.svg" alt="">
-                <ul class="subscription-plan-details">
+                <ul id="pro" class="subscription-plan-details">
                   <li class="subscription-plan-heading">Pro</li>
-                  <li class="subscription-plan-price">$15/mo</li>
+                  <li class="subscription-plan-price" id="pro_plan_price">$15/mo</li>
+                  <li id="pro_months_free" class="months_free"></li>
                 </ul>
               </div>
             </div>
             <div class="toggle-container">
               <p>Monthly</p>
-              <input type="checkbox" id="check_box"> 
-              <label for="check_box" class="toggle"></label>
+              <input type="checkbox" id="toggle_check" onclick="subscription_plan_year_month()"> 
+              <label for="toggle_check" class="toggle"></label>
               <p>Yearly</p>
             </div>
             <div class="subscription-plan-button-container">
