@@ -14,6 +14,25 @@ let phone_no_er;
 const letters=/^[A-Za-z]+$/;
 const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
+// -----------------second_step-----------------------
+const arcade=document.getElementById('arcade');
+const Advanced=document.getElementById('Advanced');
+const pro=document.getElementById('pro');
+function arcade_click(){
+  arcade.classList.toggle('subscription-plan-highlated');
+  Advanced.classList.remove('subscription-plan-highlated');
+  pro.classList.remove('subscription-plan-highlated');
+}
+function advanced_click(){
+  Advanced.classList.toggle('subscription-plan-highlated');
+  pro.classList.remove('subscription-plan-highlated');
+  arcade.classList.remove('subscription-plan-highlated');
+}
+function pro_click(){
+  pro.classList.toggle('subscription-plan-highlated');
+  arcade.classList.remove('subscription-plan-highlated');
+  Advanced.classList.toggle('subscription-plan-highlated');
+}
 function subscription_plan_year_month(){
   const arcade_months_free=document.getElementById('arcade_months_free');
   const advanced_months_free=document.getElementById('advanced_months_free');
