@@ -18,6 +18,9 @@ const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 const arcade=document.getElementById('arcade');
 const Advanced=document.getElementById('Advanced');
 const pro=document.getElementById('pro');
+const second_step=document.getElementById('second_step');
+const first_step=document.getElementById('first_step');
+
 function arcade_click(){
   arcade.classList.toggle('subscription-plan-highlated');
   Advanced.classList.remove('subscription-plan-highlated');
@@ -31,7 +34,7 @@ function advanced_click(){
 function pro_click(){
   pro.classList.toggle('subscription-plan-highlated');
   arcade.classList.remove('subscription-plan-highlated');
-  Advanced.classList.toggle('subscription-plan-highlated');
+  Advanced.classList.remove('subscription-plan-highlated');
 }
 function subscription_plan_year_month(){
   const arcade_months_free=document.getElementById('arcade_months_free');
@@ -55,9 +58,7 @@ function subscription_plan_year_month(){
     pro_months_free.textContent='';
   }
 }
-function second_step(){
-  const second_step=document.getElementById('second_step');
-  const first_step=document.getElementById('first_step');
+function second_step_function(){
   first_step.classList.add('subscription-page-personalinfo-display');
   second_step.classList.remove('subscription-plan-main-container-display');
   const step1_num=document.getElementById("step1");
@@ -67,6 +68,12 @@ function second_step(){
   step2_num.classList.remove('subscription-page-navbar-number');
   step2_num.classList.add('subscription-page-navbar-highlted-number');
  }
+
+function goback_function(){
+  first_step.classList.remove('subscription-page-personalinfo-display');
+  second_step.classList.add('subscription-plan-main-container-display');
+}
+//  ---------------------first_step--------------------------
 
 form.addEventListener('submit',function(e){
   e.preventDefault();
@@ -156,7 +163,7 @@ form.addEventListener('submit',function(e){
           .then(res=>res.text())
           .then(data=> console.log(data));
           alert("Your Data Saved Successfully"); 
-          second_step();       
+          second_step_function();       
       })
 
     document.getElementById('name-check').classList.remove('check-success'); 
