@@ -46,9 +46,9 @@
         
         <!-- ------------personalInfo---------first step------------ -->
         
-         <div  id='first_step' class="subscription-page-personalinfo"> 
-          <h1 class="subscription-page-personalinfo-heading" id="personal-heading">Personal info</h1>
-          <p class="subscription-page-personalinfo-para" id="personal-para">Please provide your name,email address, and phone number.</p> 
+         <div  id='first_step' class="subscription-page-step-info"> 
+          <h1 class="subscription-page-step-info-heading" id="personal-heading">Personal info</h1>
+          <p class="subscription-page-step-info-para" id="personal-para">Please provide your name,email address and phone number.</p> 
 
          <!-- -----------personalinfo-form-------------- --> 
 
@@ -94,9 +94,9 @@
 
         <!-- ----------------------second step------------------------------- -->
 
-        <div id="second_step" class="subscription-plan-main-container subscription-plan-main-container-display">
-          <h1 class="subscription-page-personalinfo-heading" id="personal-heading">Select your plan</h1>
-            <p class="subscription-page-personalinfo-para" id="personal-para">You have the option of monthly or yearly billing</p> 
+        <div id="second_step" class="subscription-page-step-info subscription-page-step-info-display">
+          <h1 class="subscription-page-step-info-heading" id="personal-heading">Select your plan</h1>
+            <p class="subscription-page-step-info-para" id="personal-para">You have the option of monthly or yearly billing</p> 
             <div class="subscription-plan-container">
               <div id="arcade" class="subscription-plan" onclick="arcade_click()">
                 <img class="subscription-plan-img" src="./assets/images/icon-arcade.svg" alt="">
@@ -134,8 +134,52 @@
               <button class="next-step-button" onclick="secondstep_nextstep_function()">Next Step</button>
             </div>
           </div>
+
+          <!-- ------------------------third step----------------------------------------- -->
+
+          <div id="third_step" class="subscription-page-step-info-display subscription-page-step-info">
+            <h1 class="subscription-page-step-info-heading" id="personal-heading">Pick add-ons</h1>
+            <p class="subscription-page-step-info-para" id="personal-para">Add-ons help enhance your gaming experience.</p> 
+            <div class="service-container">
+              <div class="online_service_container">
+                <div class="online_service_details">
+                  <input type="checkbox" name="" id="online_service_check" class="input_check_box">
+                <label for="online_service_check" class="online_service">
+                    <li class="service_heading">Online service</li>
+                    <li class="service_para">Access to multiplayer games</li>
+                </label> 
+                </div>                 
+                <p class="service_price">+$1/mo</p>                 
+              </div>
+              <div class="online_service_container">
+                <div class="online_service_details">
+                  <input type="checkbox" name="" id="larger_storage_check" class="input_check_box">
+                <label for="larger_storage_check" class="online_service">
+                    <li class="service_heading">Larger storage</li>
+                    <li class="service_para">Extra 1TB cloud save</li>
+                </label> 
+                </div>                 
+                <p class="service_price">+$2/mo</p>               
+              </div>
+              <div class="online_service_container">
+                <div class="online_service_details">
+                  <input type="checkbox" name="" id="custom_profile" class="input_check_box">
+                <label for="custom_profile" class="online_service">
+                    <li class="service_heading">Cusomizable profile</li>
+                    <li class="service_para">Custom theme on your profile</li>
+                </label> 
+                </div>                 
+                <p class="service_price">+$2/mo</p>        
+              </div>
+            </div>
+            <div class="subscription-plan-button-container">
+              <button class="goback-btn" onclick="thirdstep_goback_function()">Go Back</button>
+              <button class="next-step-button" onclick="thirdstep_nextstep_function()">Next Step</button>
+            </div>
+          </div>
       </div>        
-    </section>    
+    </section>
+
     <script src="./index.js"></script>
     <script src="https://kit.fontawesome.com/060c595db5.js" crossorigin="anonymous"></script>
 </body>

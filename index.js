@@ -1,20 +1,18 @@
-const personal_form=document.getElementById('form');
-const name=document.getElementById('name');
-const email=document.getElementById('email');
-const phone_no=document.getElementById("phone_no");
-const name_err=document.getElementById('name_err');
-const email_err=document.getElementById('email_err'); 
-const phone_no_err=document.getElementById('phone_no_err');
-const personal_heading=document.getElementById('personal-heading');
-const personal_para=document.getElementById('personal-para');
-
-let name_er;
-let email_er;
-let phone_no_er;
-const letters=/^[A-Za-z]+$/;
-const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
 let user_object={}
+const step1_num=document.getElementById("step1");
+const step2_num=document.getElementById("step2");
+const step3_num=document.getElementById("step3");
+// ------------------------------third step---------------------
+const third_step=document.getElementById('third_step');
+
+function third_step_function(){
+  third_step.classList.remove('subscription-page-step-info-display');
+  second_step.classList.add('subscription-page-step-info-display');
+  step2_num.classList.add('subscription-page-navbar-number');
+  step2_num.classList.remove('subscription-page-navbar-highlted-number');
+  step3_num.classList.remove('subscription-page-navbar-number');
+  step3_num.classList.add('subscription-page-navbar-highlted-number');
+}
 
 // -----------------second_step-----------------------
 const arcade=document.getElementById('arcade');
@@ -68,12 +66,10 @@ function subscription_plan_year_month(){                  // toggle switch selec
   }
 }
 function second_step_function(){                                         //second step function
-  first_step.classList.add('subscription-page-personalinfo-display');
-  second_step.classList.remove('subscription-plan-main-container-display');
-  const step1_num=document.getElementById("step1");
+  first_step.classList.add('subscription-page-step-info-display');
+  second_step.classList.remove('subscription-page-step-info-display');
   step1_num.classList.add('subscription-page-navbar-number');
   step1_num.classList.remove('subscription-page-navbar-highlted-number');
-  const step2_num=document.getElementById("step2");
   step2_num.classList.remove('subscription-page-navbar-number');
   step2_num.classList.add('subscription-page-navbar-highlted-number');
  }
@@ -92,10 +88,26 @@ function secondstep_nextstep_function(){                                      //
     user_object['months_year']=months_year;
     first_step.classList.add('subscription-page-personalinfo-display');
     second_step.classList.add('subscription-plan-main-container-display');  
+    third_step_function()
   }
 }
 
 //  ---------------------first_step--------------------------
+const personal_form=document.getElementById('form');
+const name=document.getElementById('name');
+const email=document.getElementById('email');
+const phone_no=document.getElementById("phone_no");
+const name_err=document.getElementById('name_err');
+const email_err=document.getElementById('email_err'); 
+const phone_no_err=document.getElementById('phone_no_err');
+const personal_heading=document.getElementById('personal-heading');
+const personal_para=document.getElementById('personal-para');
+
+let name_er;
+let email_er;
+let phone_no_er;
+const letters=/^[A-Za-z]+$/;
+const email_valid=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 form.addEventListener('submit',function(e){
   e.preventDefault();

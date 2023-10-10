@@ -18,6 +18,21 @@
   border-radius: 16px;
   background-color: white;
 }
+.subscription-page-step-info{
+  padding: 30px;
+  padding-right:50px;
+  margin-left: 20px;
+}
+.subscription-page-step-info-para{
+  color: hsl(231, 11%, 63%);
+}
+
+.subscription-page-step-info-heading{
+  color: #1a1a79;
+}
+.subscription-page-step-info-display{
+  display: none;
+}
 /* -----------------navbar--------------- */
 .subscription-page-navbar{
   flex-basis: 30%;
@@ -70,21 +85,9 @@
   color:hsl(206, 82%, 78%);
 }
 
-/* ------------------profile info------- first-step-------- */
-.subscription-page-personalinfo-display{
-  display: none;
-}
-.subscription-page-personalinfo{
-  flex-basis: 20%;
-  padding: 30px;
-  padding-right:50px;
-  height: 80%;
-  margin-left: 20px;
-}
 
-.subscription-page-personalinfo-para{
-  color: hsl(231, 11%, 63%);
-}
+/* ------------------profile info------- first-step-------- */
+
 .subscription-page-personalinfo-form{
   margin-top: 30px;
   color: hsl(235, 10%, 21%);
@@ -102,6 +105,7 @@
   margin-top: 8px;
   border-radius: 8px;
   border: 1px solid hsl(240, 4%, 91%);
+  color: #171749;
 }
 .input-check{
   display: none;
@@ -143,9 +147,7 @@
 }
 
 /* -------------second  step------------------ */
-.subscription-plan-main-container-display{
- display: none;
-}
+
 .subscription-plan-main-container{
   margin-top: 40px;
   margin-left: 45px;
@@ -220,7 +222,6 @@
 }
 input:checked + .toggle{
   background-color:#20096d;
-
 }
 input:checked + .toggle::before{
 transform: translateX(20px);
@@ -236,11 +237,59 @@ transform: translateX(20px);
 .goback-btn{
   border: none;
   background-color: transparent;
-  color:hsl(229, 49%, 36%);
+  color:hsl(229, 32%, 71%);
   font-weight: 500;
   font-size: 16px;
   margin-top: 20px;
 }
+.goback-btn:hover{
+  color:hsl(229, 49%, 36%);
+}
+
+/* ---------------third step---------------------- */
+.service-container{
+  margin-top: 40px;
+}
+.online_service_container{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid  hsl(229, 24%, 87%);
+  padding:10px 20px;
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.online_service_container:hover{
+  border: 1.5px solid hsl(213, 52%, 50%); 
+}
+.selected_service_container{
+  background-color:rgb(244, 248, 248);
+  border: 1px solid rgb(27, 27, 155);
+}
+.online_service{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 5px;
+}
+.online_service_details{
+  display: flex;
+  justify-content: row;
+}
+.input_check_box{
+width: 20px;
+margin-right: 20px;
+}
+.service_heading{
+  color: #171785;
+}
+.service_para{
+  color: #b9b9d3;  
+}
+.service_price{
+ color: #8e8ef1;
+}
+
 /* ------------------mobile view--------------- */
 @media screen and (max-width:1000px){
   .subscription-page-view{
@@ -270,7 +319,7 @@ transform: translateX(20px);
  .subscription-page-step-cotainer{
   padding-left: 20px;
 }
-.subscription-page-personalinfo{
+.subscription-page-step-info{
   margin-top: 100px;
   margin-left: 30px;
   width: 340px;
@@ -279,7 +328,6 @@ transform: translateX(20px);
   background-color: white;
   box-shadow: 2px 2px 2px 2px rgb(253, 253, 253);
   padding-top: 1rem;
-  height: 34rem;
   }
 .subscription-page-personalinfo-input{
   width:280px;
