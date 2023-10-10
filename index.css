@@ -264,7 +264,7 @@ transform: translateX(20px);
 }
 .selected_service_container{
   background-color:rgb(244, 248, 248);
-  border: 1px solid rgb(27, 27, 155);
+  border: 1px solid rgb(88, 11, 88);
 }
 .online_service_wrap{
   display: flex;

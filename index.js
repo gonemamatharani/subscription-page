@@ -13,6 +13,11 @@ function third_step_function(){
   step2_num.classList.remove('subscription-page-navbar-highlted-number');
   step3_num.classList.remove('subscription-page-navbar-number');
   step3_num.classList.add('subscription-page-navbar-highlted-number');
+  if(months_year==='year'){
+    document.getElementById('online_price').textContent='+$10/yr';
+    document.getElementById('larger_price').textContent='+$20/yr';
+    document.getElementById('cusomized_price').textContent='+$20/yr';
+  }
 }
 function online_service_click_function(){                                        //arcade plan selection
   const online_service=document.getElementById('online_service');
@@ -26,7 +31,9 @@ function customized_profile_click_function(){                                   
   const customized_profile=document.getElementById('customized_profile');
   customized_profile.classList.toggle('selected_service_container');
 }
-
+function thirdstep_nextstep_function(){
+  console.log(user_object)
+}
 // -----------------second_step-----------------------
 const arcade=document.getElementById('arcade');
 const Advanced=document.getElementById('Advanced');
@@ -34,7 +41,7 @@ const pro=document.getElementById('pro');
 const second_step=document.getElementById('second_step');
 const first_step=document.getElementById('first_step');
 let selected_subscrption_plan;
-let months_year;
+let months_year='month';
 
 function arcade_click(){                                        //arcade plan selection
   arcade.classList.toggle('subscription-plan-highlated');
@@ -99,6 +106,7 @@ function secondstep_nextstep_function(){                                      //
   }else{
     user_object['plan']=selected_subscrption_plan;
     user_object['months_year']=months_year;
+    console.log(user_object)
     first_step.classList.add('subscription-page-personalinfo-display');
     second_step.classList.add('subscription-plan-main-container-display');  
     third_step_function()
