@@ -17,6 +17,10 @@ function third_step_function(){
     document.getElementById('online_price').textContent='+$10/yr';
     document.getElementById('larger_price').textContent='+$20/yr';
     document.getElementById('cusomized_price').textContent='+$20/yr';
+  }else{
+    document.getElementById('online_price').textContent='+$1/mo';
+    document.getElementById('larger_price').textContent='+$2/mo';
+    document.getElementById('cusomized_price').textContent='+$2/mo';
   }
 }
 function online_service_click_function(){                                        //arcade plan selection
@@ -30,6 +34,10 @@ function larger_storage_click_function(){                                       
 function customized_profile_click_function(){                                        //arcade plan selection
   const customized_profile=document.getElementById('customized_profile');
   customized_profile.classList.toggle('selected_service_container');
+}
+function thirdstep_goback_function(){
+  third_step.classList.add('subscription-page-step-info-display');
+  second_step.classList.remove('subscription-page-step-info-display');
 }
 function thirdstep_nextstep_function(){
   console.log(user_object)
