@@ -5,6 +5,7 @@ const step3_num=document.getElementById("step3");
 // ------------------------------third step---------------------
 const third_step=document.getElementById('third_step');
 
+
 function third_step_function(){
   third_step.classList.remove('subscription-page-step-info-display');
   second_step.classList.add('subscription-page-step-info-display');
@@ -12,6 +13,18 @@ function third_step_function(){
   step2_num.classList.remove('subscription-page-navbar-highlted-number');
   step3_num.classList.remove('subscription-page-navbar-number');
   step3_num.classList.add('subscription-page-navbar-highlted-number');
+}
+function online_service_click_function(){                                        //arcade plan selection
+  const online_service=document.getElementById('online_service');
+  online_service.classList.toggle('selected_service_container');
+}
+function larger_storage_click_function(){                                        //arcade plan selection
+  const larger_storage=document.getElementById('larger_storage');
+  larger_storage.classList.toggle('selected_service_container');
+}
+function customized_profile_click_function(){                                        //arcade plan selection
+  const customized_profile=document.getElementById('customized_profile');
+  customized_profile.classList.toggle('selected_service_container');
 }
 
 // -----------------second_step-----------------------
