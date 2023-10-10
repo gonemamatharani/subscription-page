@@ -2,9 +2,17 @@ let user_object={}
 const step1_num=document.getElementById("step1");
 const step2_num=document.getElementById("step2");
 const step3_num=document.getElementById("step3");
+
+// ------------------------fourth step--------------------------
+const fourth_step=document.getElementById('fourth_step');
+function  fourth_step_function(){
+  third_step.classList.add('subscription-page-step-info-display');
+
+};  
+
+
 // ------------------------------third step---------------------
 const third_step=document.getElementById('third_step');
-
 
 function third_step_function(){
   third_step.classList.remove('subscription-page-step-info-display');
@@ -13,7 +21,7 @@ function third_step_function(){
   step2_num.classList.remove('subscription-page-navbar-highlted-number');
   step3_num.classList.remove('subscription-page-navbar-number');
   step3_num.classList.add('subscription-page-navbar-highlted-number');
-  if(months_year==='year'){
+  if(months_year==='Year'){
     document.getElementById('online_price').textContent='+$10/yr';
     document.getElementById('larger_price').textContent='+$20/yr';
     document.getElementById('cusomized_price').textContent='+$20/yr';
@@ -40,7 +48,33 @@ function thirdstep_goback_function(){
   second_step.classList.remove('subscription-page-step-info-display');
 }
 function thirdstep_nextstep_function(){
-  console.log(user_object)
+  const online_service_check=document.getElementById('online_service_check');
+  const larger_storage_check=document.getElementById('larger_storage_check');
+  const custom_profile=document.getElementById('custom_profile');
+  let plan_total_amt=0;
+  if(online_service_check.checked){
+    if(months_year==="Month"){
+      plan_total_amt+=1;
+    }else{
+      plan_total_amt+=10;
+    }
+  }
+  if(larger_storage_check.checked){
+    if(months_year==="Month"){
+      plan_total_amt+=2;
+    }else{
+      plan_total_amt+=20;
+    }
+  }
+  if(custom_profile.checked){
+    if(months_year==="Month"){
+      plan_total_amt+=2;
+    }else{
+      plan_total_amt+=20;
+    }
+  }
+  console.log(plan_total_amt);
+  fourth_step_function();  
 }
 // -----------------second_step-----------------------
 const arcade=document.getElementById('arcade');
@@ -49,25 +83,25 @@ const pro=document.getElementById('pro');
 const second_step=document.getElementById('second_step');
 const first_step=document.getElementById('first_step');
 let selected_subscrption_plan;
-let months_year='month';
+let months_year='Month';
 
 function arcade_click(){                                        //arcade plan selection
   arcade.classList.toggle('subscription-plan-highlated');
   Advanced.classList.remove('subscription-plan-highlated');
   pro.classList.remove('subscription-plan-highlated');
-  selected_subscrption_plan='arcade';
+  selected_subscrption_plan='Arcade';
 }
 function advanced_click(){                                      //advanced plan selection
   Advanced.classList.toggle('subscription-plan-highlated');
   pro.classList.remove('subscription-plan-highlated');
   arcade.classList.remove('subscription-plan-highlated');
-  selected_subscrption_plan='advanced';
+  selected_subscrption_plan='Advanced';
 }
 function pro_click(){                                          //pro plan selection
   pro.classList.toggle('subscription-plan-highlated');
   arcade.classList.remove('subscription-plan-highlated');
   Advanced.classList.remove('subscription-plan-highlated');
-  selected_subscrption_plan='pro';
+  selected_subscrption_plan='Pro';
 }
 function subscription_plan_year_month(){                  // toggle switch selection
   const arcade_months_free=document.getElementById('arcade_months_free');
@@ -82,7 +116,7 @@ function subscription_plan_year_month(){                  // toggle switch selec
     advanced_months_free.textContent='2 months free';
     document.getElementById('pro_plan_price').textContent='$150/yr';
     pro_months_free.textContent='2 months free';
-    months_year='year';
+    months_year='Year';
   }else{
     document.getElementById('arcade_plan_price').textContent='$9/mo';
     document.getElementById('advanced_plan_price').textContent='$12/yr';
@@ -90,7 +124,7 @@ function subscription_plan_year_month(){                  // toggle switch selec
     arcade_months_free.textContent='';
     advanced_months_free.textContent='';
     pro_months_free.textContent='';
-    months_year='month';
+    months_year='Month';
   }
 }
 function second_step_function(){                                         //second step function
