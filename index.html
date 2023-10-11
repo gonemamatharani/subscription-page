@@ -180,8 +180,7 @@
           
           <!-- ---------------------fourth step----------------------------------- -->
 
-          <div id="fourth_step" class="subscription-page-step-info-display" >
-            <div class="subscription-page-step-info">
+          <div id="fourth_step" class="subscription-page-step-info-display subscription-page-step-info" >
               <h1 class="subscription-page-step-info-heading" id="personal-heading">Finishing up</h1>
               <p class="subscription-page-step-info-para" id="personal-para">Double-check everything looks OK before confirming.</p> 
               <div id="amount_container" class="amount_container">
@@ -198,9 +197,8 @@
                 <p class="service_head">Total <span id="selected_month_year">(per month)</span></p>
                 <p id="total_price">+$12/mo</p>
               </div>
-            </div>
             <div class="subscription-plan-button-container button-container_last">
-              <button class="goback-btn" onclick="goback_function()">Go Back</button>
+              <button class="goback-btn" onclick="fourth_step_goback_function()">Go Back</button>
               <button class="next-step-button" onclick="confirm_function()">Confirm</button>
             </div>
           </div>

@@ -20,20 +20,14 @@ function  fourth_step_function(){
   step3_num.classList.remove('subscription-page-navbar-highlted-number');
   step4_num.classList.remove('subscription-page-navbar-number');
   step4_num.classList.add('subscription-page-navbar-highlted-number');
+  seleted_plan.textContent=selected_subscrption_plan;
   if(months_year==='Year'){
     plan_month_or_year.textContent='(yearly)'; 
     total_monthly_or_not.textContent='(per year)'; 
   }
-  console.log((plan==="Arcade") )
-  console.log( (months_year==='Year'))
-
-  console.log((plan==="Arcade") && (months_year==='Year'))
-
   if((selected_subscrption_plan==="Arcade") && (months_year==='Year')){
     plan_price.textContent='$90/yr';
-    plan_total_amt+=90;
-    console.log(plan_total_amt)
-    console.log(plan_price)
+    plan_total_amt+=90;    
   }else if(selected_subscrption_plan==="Advanced" && months_year==='Year'){
     plan_price.textContent='$120/yr';
     plan_total_amt+=120;
@@ -63,6 +57,11 @@ function create_amount_billing(service,amt){
     div.classList.add('plan_container');
     amount_container.appendChild(div); 
 } 
+function fourth_step_goback_function(){
+  console.log("goback")
+  third_step.classList.remove('subscription-page-step-info-display');
+  fourth_step.classList.add('subscription-page-step-info-display');
+}
 
 // ------------------------------third step---------------------
 const third_step=document.getElementById('third_step');
@@ -141,7 +140,6 @@ function thirdstep_nextstep_function(){
     }
     create_amount_billing(service,cus_profile);
   }
-  console.log(plan_total_amt);
   fourth_step_function();  
 }
 // -----------------second_step-----------------------
@@ -217,7 +215,6 @@ function secondstep_nextstep_function(){                                      //
     user_object['plan']=selected_subscrption_plan;
     user_object['months_year']=months_year;
     console.log(user_object);
-    seleted_plan.textContent=selected_subscrption_plan;
     console.log(seleted_plan);
     console.log(selected_subscrption_plan)
     console.log(typeof(months_year));
