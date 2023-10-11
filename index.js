@@ -21,11 +21,10 @@ function  fourth_step_function(){
   step4_num.classList.remove('subscription-page-navbar-number');
   step4_num.classList.add('subscription-page-navbar-highlted-number');
   seleted_plan.textContent=selected_subscrption_plan;
-  if(months_year==='Year'){
-    plan_month_or_year.textContent='(yearly)'; 
-    total_monthly_or_not.textContent='(per year)'; 
-  }
-  if((selected_subscrption_plan==="Arcade") && (months_year==='Year')){
+  if((selected_subscrption_plan==="Arcade") && (months_year==='Month')){
+    plan_price.textContent='$9/mo';
+    plan_total_amt+=9;    
+  }else if((selected_subscrption_plan==="Arcade") && (months_year==='Year')){
     plan_price.textContent='$90/yr';
     plan_total_amt+=90;    
   }else if(selected_subscrption_plan==="Advanced" && months_year==='Year'){
@@ -41,7 +40,13 @@ function  fourth_step_function(){
     plan_price.textContent='$150/mo';
     plan_total_amt+=150;
   }
-  total_price.textContent=`$${plan_total_amt}/yr`;
+  if(months_year==='Year'){
+    plan_month_or_year.textContent='(yearly)'; 
+    total_monthly_or_not.textContent='(per year)'; 
+    total_price.textContent=`$${plan_total_amt}/yr`;
+  }else{
+    total_price.textContent=`$${plan_total_amt}/mo`;
+  }
 };  
 
 function create_amount_billing(service,amt){
@@ -61,6 +66,12 @@ function fourth_step_goback_function(){
   console.log("goback")
   third_step.classList.remove('subscription-page-step-info-display');
   fourth_step.classList.add('subscription-page-step-info-display');
+}
+function confirm_function(){
+  const thank_you=document.getElementById('thank_you');
+  fourth_step.classList.add('subscription-page-step-info-display');
+  thank_you.classList.remove('subscription-page-step-info-display');
+
 }
 
 // ------------------------------third step---------------------
