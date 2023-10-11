@@ -177,6 +177,33 @@
               <button class="next-step-button" onclick="thirdstep_nextstep_function()">Next Step</button>
             </div>
           </div>
+          
+          <!-- ---------------------fourth step----------------------------------- -->
+
+          <div id="fourth_step" class="subscription-page-step-info-display" >
+            <div class="subscription-page-step-info">
+              <h1 class="subscription-page-step-info-heading" id="personal-heading">Finishing up</h1>
+              <p class="subscription-page-step-info-para" id="personal-para">Double-check everything looks OK before confirming.</p> 
+              <div id="amount_container" class="amount_container">
+                <div class="plan_container">
+                  <ul class="plan_details">
+                    <li id="plan">Arcade <span id="plan_month_or_year">(Monthly)</span></li>
+                    <button class="change_plan">Change</button>
+                  </ul>                  
+                   <p id="price">$9/mo</p>
+                </div>
+                <hr class="horizontal_line"/>
+              </div>
+              <div class="plan_container">    
+                <p class="service_head">Total <span id="selected_month_year">(per month)</span></p>
+                <p id="total_price">+$12/mo</p>
+              </div>
+            </div>
+            <div class="subscription-plan-button-container button-container_last">
+              <button class="goback-btn" onclick="goback_function()">Go Back</button>
+              <button class="next-step-button" onclick="confirm_function()">Confirm</button>
+            </div>
+          </div>
       </div>        
     </section>
 

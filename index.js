@@ -2,14 +2,67 @@ let user_object={}
 const step1_num=document.getElementById("step1");
 const step2_num=document.getElementById("step2");
 const step3_num=document.getElementById("step3");
+const step4_num=document.getElementById("step4");
+const amount_container=document.getElementById('amount_container');
+const seleted_plan=document.getElementById('plan');
+const plan_month_or_year=document.getElementById('plan_month_or_year');
+const plan_price=document.getElementById('price');
+let plan_total_amt=0;
+const total_price=document.getElementById('total_price');
+const total_monthly_or_not=document.getElementById('selected_month_year');
 
 // ------------------------fourth step--------------------------
 const fourth_step=document.getElementById('fourth_step');
 function  fourth_step_function(){
   third_step.classList.add('subscription-page-step-info-display');
+  fourth_step.classList.remove('subscription-page-step-info-display');
+  step3_num.classList.add('subscription-page-navbar-number');
+  step3_num.classList.remove('subscription-page-navbar-highlted-number');
+  step4_num.classList.remove('subscription-page-navbar-number');
+  step4_num.classList.add('subscription-page-navbar-highlted-number');
+  if(months_year==='Year'){
+    plan_month_or_year.textContent='(yearly)'; 
+    total_monthly_or_not.textContent='(per year)'; 
+  }
+  console.log((plan==="Arcade") )
+  console.log( (months_year==='Year'))
 
+  console.log((plan==="Arcade") && (months_year==='Year'))
+
+  if((selected_subscrption_plan==="Arcade") && (months_year==='Year')){
+    plan_price.textContent='$90/yr';
+    plan_total_amt+=90;
+    console.log(plan_total_amt)
+    console.log(plan_price)
+  }else if(selected_subscrption_plan==="Advanced" && months_year==='Year'){
+    plan_price.textContent='$120/yr';
+    plan_total_amt+=120;
+  }else if(selected_subscrption_plan==="Advanced" && months_year==='Month'){
+    plan_price.textContent='$12/mo';
+    plan_total_amt+=12;
+  }else if(selected_subscrption_plan==="Pro" && months_year==='Month'){
+    plan_price.textContent='$15/mo';
+    plan_total_amt+=15;
+  }else if(selected_subscrption_plan==="Pro" && months_year==='Year'){
+    plan_price.textContent='$150/mo';
+    plan_total_amt+=150;
+  }
+  total_price.textContent=`$${plan_total_amt}/yr`;
 };  
 
+function create_amount_billing(service,amt){
+  const div=document.createElement('div');
+    const p1=document.createElement('p');
+    const p2=document.createElement('p');
+    p1.textContent=service;
+    p1.classList.add('service_head');
+    div.appendChild(p1);
+    p2.textContent=amt;
+    p2.classList.add('service_amount');
+    div.appendChild(p2);
+    div.classList.add('plan_container');
+    amount_container.appendChild(div); 
+} 
 
 // ------------------------------third step---------------------
 const third_step=document.getElementById('third_step');
@@ -51,27 +104,42 @@ function thirdstep_nextstep_function(){
   const online_service_check=document.getElementById('online_service_check');
   const larger_storage_check=document.getElementById('larger_storage_check');
   const custom_profile=document.getElementById('custom_profile');
-  let plan_total_amt=0;
+  let service_amt;
+  let large_storage;
+  let cus_profile;
+  let service;
   if(online_service_check.checked){
+    service='Online service';
     if(months_year==="Month"){
       plan_total_amt+=1;
+      service_amt='+$1/mo';
     }else{
       plan_total_amt+=10;
+      service_amt='+$10/yr';
     }
-  }
+    create_amount_billing(service,service_amt);
+   }
   if(larger_storage_check.checked){
+    service='Larger storage';
     if(months_year==="Month"){
       plan_total_amt+=2;
+      large_storage='+$2/mo';
     }else{
       plan_total_amt+=20;
+      large_storage='+$20/yr';
     }
+    create_amount_billing(service,large_storage);
   }
   if(custom_profile.checked){
+    service='Customizable profile';
     if(months_year==="Month"){
       plan_total_amt+=2;
+      cus_profile='+$2/mo';
     }else{
       plan_total_amt+=20;
+      cus_profile='+$20/yr';
     }
+    create_amount_billing(service,cus_profile);
   }
   console.log(plan_total_amt);
   fourth_step_function();  
@@ -148,7 +216,13 @@ function secondstep_nextstep_function(){                                      //
   }else{
     user_object['plan']=selected_subscrption_plan;
     user_object['months_year']=months_year;
-    console.log(user_object)
+    console.log(user_object);
+    seleted_plan.textContent=selected_subscrption_plan;
+    console.log(seleted_plan);
+    console.log(selected_subscrption_plan)
+    console.log(typeof(months_year));
+    console.log(months_year==='Year')
+    
     first_step.classList.add('subscription-page-personalinfo-display');
     second_step.classList.add('subscription-plan-main-container-display');  
     third_step_function()
